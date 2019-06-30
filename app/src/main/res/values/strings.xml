@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Habit Trainer</string>
+    <string name="accImageDescription">An image reflecting the habit</string>
+    <string name="placeholderTitle">Drink water responsibly</string>
+    <string name="placeholderDescription">Or pay the penalty…</string>
+    <string name="menu_begin_new_habit">Begin New Habit</string>
+    <string name="new_image_habit">The image for the selected new habit</string>
+    <string name="new_habit_title_placeholder">Title</string>
+    <string name="new_habit_image_butt">Choose Image</string>
+    <string name="new_habit_save_butt">Save Habit</string>
+    <string name="new_habit_description">Description</string>
+</resources>

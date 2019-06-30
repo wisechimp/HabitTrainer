@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateHabitActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/new_habit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/new_habit_title_placeholder"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@id/new_habit_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/new_habit_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint="@string/new_habit_description"
+            app:layout_constraintTop_toBottomOf="@id/new_habit_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/new-habit-image-butt" />
+
+        <Button
+            android:id="@+id/new-habit-image-butt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_habit_image_butt"
+            android:onClick="chooseImage"
+            app:layout_constraintBottom_toTopOf="@id/new_habit_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/new_habit_description" />
+
+        <ImageView
+            android:id="@+id/new_habit_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center_horizontal"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/new-habit-image-butt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/new_habit_save_butt"
+            android:contentDescription="@string/new_image_habit" />
+
+        <Button
+            android:id="@+id/new_habit_save_butt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_habit_save_butt"
+            app:layout_constraintBottom_toTopOf="@id/new_habit_error"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/new_habit_image" />
+
+        <TextView
+            android:id="@+id/new_habit_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#e53935"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/new_habit_save_butt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
