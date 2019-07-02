@@ -10,6 +10,8 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.wisechimp.habittrainer.dataBase.HabitDatabaseTable
+import com.wisechimp.habittrainer.recyclerView.Habit
 import kotlinx.android.synthetic.main.activity_create_habit.*
 import java.io.IOException
 
@@ -69,9 +71,19 @@ class CreateHabitActivity : AppCompatActivity() {
             Log.d(TAG, "No habit stored: Image missing")
             displayErrorMessage("Your habit needs a motivating image")
             return
+        }
+
+        val title = new_habit_title.text.toString()
+        val description = new_habit_description.text.toString()
+        //We can use !! because we know that it should not be null
+        val habit = Habit(title, description, imageBitmap!!)
+
+        val id = HabitDatabaseTable(this).store(habit)
+        if (id == -1L) {
+            displayErrorMessage("Habit could not be stored, let's not make a habit of this...")
         } else {
-            displayErrorMessage("Woo hoo nailed it mate!")
-            return
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

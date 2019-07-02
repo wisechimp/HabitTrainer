@@ -14,7 +14,7 @@ class HabitsAdapter(val habits: List<Habit>) : RecyclerView.Adapter<HabitViewHol
         val rvCard = holder.card
         rvCard.text_view_title.text = habit.title
         rvCard.text_view_description.text = habit.description
-        rvCard.image_view_icon.setImageResource(habit.image)
+        rvCard.image_view_icon.setImageBitmap(habit.image)
     }
 
     //Creates a new View Holder item
